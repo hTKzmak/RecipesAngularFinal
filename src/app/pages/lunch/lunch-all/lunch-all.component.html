@@ -1,1 +1,14 @@
-<p>lunch-all works!</p>
+<div class="recipes-list">
+    @for(elem of recipesService.lunchData; track elem.id){
+        <app-recipe-item 
+            [id]="elem.id"
+            [name]="elem.name"
+            [ingredients]="elem.ingredients"
+            [calories]="elem.caloriesPerServing"
+            [rating]="elem.rating"
+            [prepTimeMinutes]="elem.prepTimeMinutes"
+            [cookTimeMinutes]="elem.cookTimeMinutes"
+            [image]="elem.image"
+        />
+    }
+</div>

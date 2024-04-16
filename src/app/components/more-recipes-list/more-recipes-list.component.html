@@ -1,6 +1,5 @@
 <div class="more-recipes-list">
-    <!-- @for(elem of recipesService.moreRecipes; track elem.id){ -->
-    @for(elem of recipesService.recipesData; track elem.id){
+    @for(elem of recipesService.moreRecipes; track elem.id){
         <app-more-recipes-item [id]="elem.id" [name]="elem.name" [cookTimeMinutes]="elem.cookTimeMinutes" [image]="elem.image"/>
     }
 </div>

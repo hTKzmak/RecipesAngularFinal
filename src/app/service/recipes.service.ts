@@ -10,8 +10,7 @@ export class RecipesService{
   public moreRecipes: any[] = []
 
   // foods
-  // public breakfastData: any[] = []
-  public breakfastData = this.recipesData
+  public breakfastData: any[] = []
   public lunchData: any[] = []
   public dinnerData: any[] = []
   
@@ -32,7 +31,19 @@ export class RecipesService{
         this.recipesData = data.recipes
         console.log(this.recipesData)
       })
-      // .then(() => this.breakfastData = this.recipesData.sort((el) => ...))
+      .then(() => this.breakfastData = this.recipesData.filter((el) => el.mealType.includes('Breakfast')))
+      .then(() => this.easyBreakfastData = this.breakfastData.filter((el) => el.difficulty == 'Easy'))
+      .then(() => this.mediumBreakfastData = this.breakfastData.filter((el) => el.difficulty == 'Medium'))
+
+      .then(() => this.lunchData = this.recipesData.filter((el) => el.mealType.includes('Lunch')))
+      .then(() => this.easyLunchData = this.lunchData.filter((el) => el.difficulty == 'Easy'))
+      .then(() => this.mediumLunchData = this.lunchData.filter((el) => el.difficulty == 'Medium'))
+
+      .then(() => this.dinnerData = this.recipesData.filter((el) => el.mealType.includes('Dinner')))
+      .then(() => this.easyDinnerData = this.dinnerData.filter((el) => el.difficulty == 'Easy'))
+      .then(() => this.mediumDinnerData = this.dinnerData.filter((el) => el.difficulty == 'Medium'))
+
+      .finally(() => this.moreRecipes = this.recipesData.sort(() => 0.5 - Math.random()).slice(0, 6))
   }
 
   public getRecipe(id: string): void {

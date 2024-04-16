@@ -1,5 +1,5 @@
 <div class="recipes-list">
-    @for(elem of recipesService.recipesData; track elem.id){
+    @for(elem of recipesService.breakfastData; track elem.id){
         <app-recipe-item 
             [id]="elem.id"
             [name]="elem.name"

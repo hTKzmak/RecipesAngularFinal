@@ -1,0 +1,6 @@
+.recipes-list{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 165px;
+    overflow-x: auto;
+}
