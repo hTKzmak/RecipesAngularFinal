@@ -1,0 +1,26 @@
+<header>
+    <div class="logo">
+        Recepies
+    </div>
+
+    <div class="page-navigation">
+        <a (click)="goBackToPrevPage()">Go back</a>
+    </div>
+
+</header>
+
+<main>
+    <div class="container">
+
+        <div class="recipe-item-page">
+            <app-choosen-recipe-item [id]="recipesService.recipe.id" [name]="recipesService.recipe.name"
+                [instructions]="recipesService.recipe.instructions"
+                [calories]="recipesService.recipe.caloriesPerServing" [rating]="recipesService.recipe.rating"
+                [prepTimeMinutes]="recipesService.recipe.prepTimeMinutes"
+                [cookTimeMinutes]="recipesService.recipe.cookTimeMinutes" [image]="recipesService.recipe.image" />
+        </div>
+        
+        <h3>More recipes</h3>
+        <app-more-recipes-list />
+    </div>
+</main>

@@ -1,0 +1,19 @@
+.recipe-item-page{
+    display: flex;
+    justify-content: center;
+}
+
+.page-navigation{
+    margin-left: 92px;
+    margin-bottom: 40px;
+}
+
+.page-navigation>a{
+    color: #969696;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.page-navigation>a:hover{
+    color: #404040;;
+}

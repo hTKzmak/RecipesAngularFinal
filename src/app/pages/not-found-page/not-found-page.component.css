@@ -1,0 +1,14 @@
+.page-navigation{
+    margin-left: 92px;
+    margin-bottom: 70px;
+}
+
+.page-navigation>a{
+    color: #969696;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.page-navigation>a:hover{
+    color: #404040;;
+}

@@ -1,0 +1,42 @@
+<div class="recipe-item" id={{id}}>
+    <div class="recipe-info">
+        <h3>{{name}}</h3>
+
+        <div class="ingredients">
+            <h4>Ingredients</h4>
+            <div class="ingredients-list">
+                @for(elem of ingredients; track $index){
+                    <div class="ingredient-item">
+                        {{elem}}
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="information">
+            <h4>Information</h4>
+            <div class="informations-list">
+                <div class="information-item">
+                    <span>{{calories}}</span>
+                    Calories
+                </div>
+                <div class="information-item">
+                    <span>{{rating}}</span>
+                    Rating
+                </div>
+                <div class="information-item">
+                    <span>{{prepTimeMinutes}}</span>
+                    Prep time minutes
+                </div>
+                <div class="information-item">
+                    <span>{{cookTimeMinutes}}</span>
+                    Cook time minutes
+                </div>
+            </div>
+        </div>
+        <a class="btn" [routerLink]="'/recipe/' + id" (click)="getRecipeFunc()">Recipe</a>
+    </div>
+
+    <img src={{image}} alt="///" class="recipe-img">
+
+</div>

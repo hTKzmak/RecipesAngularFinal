@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RecipesService } from './service/recipes.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'myapp';
+export class AppComponent implements OnInit {
+
+  public recipesService = inject(RecipesService)
+
+  ngOnInit(): void {
+    this.recipesService.getData()
+  }
 }
